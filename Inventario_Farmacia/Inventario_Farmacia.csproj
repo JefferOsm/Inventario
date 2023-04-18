@@ -125,6 +125,18 @@
     <Compile Include="Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detalle_Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_Compras.Designer.cs">
+      <DependentUpon>Detalle_Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_Ventas.Designer.cs">
+      <DependentUpon>Detalle_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fac_descuentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_Compras.resx">
+      <DependentUpon>Detalle_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_Ventas.resx">
+      <DependentUpon>Detalle_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fac_descuentos.resx">
       <DependentUpon>Fac_descuentos.cs</DependentUpon>

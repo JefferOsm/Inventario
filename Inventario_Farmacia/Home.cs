@@ -64,5 +64,17 @@ namespace Inventario_Farmacia
             Compras compra = new Compras();
             compra.ShowDialog();
         }
+
+        private void btn_compras_Click(object sender, EventArgs e)
+        {
+            Detalle_Compras compra = new Detalle_Compras();
+            compra.ShowDialog();
+        }
+
+        private void btn_ventas_Click(object sender, EventArgs e)
+        {
+            Detalle_Ventas venta = new Detalle_Ventas();
+            venta.ShowDialog();
+        }
     }
 }

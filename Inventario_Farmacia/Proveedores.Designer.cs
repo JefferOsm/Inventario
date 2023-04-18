@@ -29,6 +29,8 @@ namespace Inventario_Farmacia
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.btn_ciudad = new System.Windows.Forms.Button();
@@ -58,7 +60,7 @@ namespace Inventario_Farmacia
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar.ForeColor = System.Drawing.Color.White;
-            this.btn_eliminar.Location = new System.Drawing.Point(1172, 634);
+            this.btn_eliminar.Location = new System.Drawing.Point(1155, 632);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(213, 54);
             this.btn_eliminar.TabIndex = 39;
@@ -72,7 +74,7 @@ namespace Inventario_Farmacia
             this.btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizar.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizar.Location = new System.Drawing.Point(933, 634);
+            this.btn_actualizar.Location = new System.Drawing.Point(916, 632);
             this.btn_actualizar.Name = "btn_actualizar";
             this.btn_actualizar.Size = new System.Drawing.Size(218, 54);
             this.btn_actualizar.TabIndex = 38;
@@ -86,7 +88,7 @@ namespace Inventario_Farmacia
             this.btn_ciudad.FlatAppearance.BorderSize = 0;
             this.btn_ciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ciudad.ForeColor = System.Drawing.Color.White;
-            this.btn_ciudad.Location = new System.Drawing.Point(1291, 163);
+            this.btn_ciudad.Location = new System.Drawing.Point(1274, 161);
             this.btn_ciudad.Name = "btn_ciudad";
             this.btn_ciudad.Size = new System.Drawing.Size(94, 29);
             this.btn_ciudad.TabIndex = 37;
@@ -100,7 +102,7 @@ namespace Inventario_Farmacia
             this.btn_pais.FlatAppearance.BorderSize = 0;
             this.btn_pais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pais.ForeColor = System.Drawing.Color.White;
-            this.btn_pais.Location = new System.Drawing.Point(1002, 164);
+            this.btn_pais.Location = new System.Drawing.Point(985, 162);
             this.btn_pais.Name = "btn_pais";
             this.btn_pais.Size = new System.Drawing.Size(94, 29);
             this.btn_pais.TabIndex = 36;
@@ -125,7 +127,7 @@ namespace Inventario_Farmacia
             this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salir.ForeColor = System.Drawing.Color.White;
-            this.btn_salir.Location = new System.Drawing.Point(1172, 550);
+            this.btn_salir.Location = new System.Drawing.Point(1155, 548);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(213, 54);
             this.btn_salir.TabIndex = 34;
@@ -139,7 +141,7 @@ namespace Inventario_Farmacia
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(933, 550);
+            this.btn_guardar.Location = new System.Drawing.Point(916, 548);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(218, 54);
             this.btn_guardar.TabIndex = 33;
@@ -151,7 +153,23 @@ namespace Inventario_Farmacia
             // 
             this.dgv_proveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.dgv_proveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_proveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_proveedores.Location = new System.Drawing.Point(36, 101);
             this.dgv_proveedores.Name = "dgv_proveedores";
             this.dgv_proveedores.ReadOnly = true;
@@ -168,7 +186,7 @@ namespace Inventario_Farmacia
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(930, 472);
+            this.label6.Location = new System.Drawing.Point(913, 470);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 30);
             this.label6.TabIndex = 31;
@@ -177,7 +195,7 @@ namespace Inventario_Farmacia
             // txt_telefono
             // 
             this.txt_telefono.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.Location = new System.Drawing.Point(1072, 472);
+            this.txt_telefono.Location = new System.Drawing.Point(1055, 470);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(313, 36);
             this.txt_telefono.TabIndex = 30;
@@ -187,7 +205,7 @@ namespace Inventario_Farmacia
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(930, 394);
+            this.label5.Location = new System.Drawing.Point(913, 392);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 30);
             this.label5.TabIndex = 29;
@@ -196,7 +214,7 @@ namespace Inventario_Farmacia
             // txt_correo
             // 
             this.txt_correo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_correo.Location = new System.Drawing.Point(1072, 394);
+            this.txt_correo.Location = new System.Drawing.Point(1055, 392);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(313, 36);
             this.txt_correo.TabIndex = 28;
@@ -206,7 +224,7 @@ namespace Inventario_Farmacia
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(930, 289);
+            this.label4.Location = new System.Drawing.Point(913, 287);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 30);
             this.label4.TabIndex = 27;
@@ -215,7 +233,7 @@ namespace Inventario_Farmacia
             // txt_direccion
             // 
             this.txt_direccion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_direccion.Location = new System.Drawing.Point(1072, 276);
+            this.txt_direccion.Location = new System.Drawing.Point(1055, 274);
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(313, 91);
@@ -226,7 +244,7 @@ namespace Inventario_Farmacia
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1167, 163);
+            this.label3.Location = new System.Drawing.Point(1150, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 30);
             this.label3.TabIndex = 25;
@@ -235,7 +253,7 @@ namespace Inventario_Farmacia
             // txt_ciudad
             // 
             this.txt_ciudad.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ciudad.Location = new System.Drawing.Point(1172, 196);
+            this.txt_ciudad.Location = new System.Drawing.Point(1155, 194);
             this.txt_ciudad.Name = "txt_ciudad";
             this.txt_ciudad.Size = new System.Drawing.Size(213, 36);
             this.txt_ciudad.TabIndex = 24;
@@ -245,7 +263,7 @@ namespace Inventario_Farmacia
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(927, 101);
+            this.label2.Location = new System.Drawing.Point(910, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 30);
             this.label2.TabIndex = 23;
@@ -254,7 +272,7 @@ namespace Inventario_Farmacia
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(1062, 101);
+            this.txt_nombre.Location = new System.Drawing.Point(1045, 99);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(323, 36);
             this.txt_nombre.TabIndex = 22;
@@ -264,7 +282,7 @@ namespace Inventario_Farmacia
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(930, 163);
+            this.label1.Location = new System.Drawing.Point(913, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 30);
             this.label1.TabIndex = 21;
@@ -273,7 +291,7 @@ namespace Inventario_Farmacia
             // txt_pais
             // 
             this.txt_pais.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pais.Location = new System.Drawing.Point(935, 196);
+            this.txt_pais.Location = new System.Drawing.Point(918, 194);
             this.txt_pais.Name = "txt_pais";
             this.txt_pais.Size = new System.Drawing.Size(216, 36);
             this.txt_pais.TabIndex = 20;

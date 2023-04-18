@@ -73,6 +73,7 @@ namespace Inventario_Farmacia
             this.btn_ventas.TabIndex = 2;
             this.btn_ventas.Text = "Ventas";
             this.btn_ventas.UseVisualStyleBackColor = false;
+            this.btn_ventas.Click += new System.EventHandler(this.btn_ventas_Click);
             // 
             // btn_compras
             // 
@@ -87,6 +88,7 @@ namespace Inventario_Farmacia
             this.btn_compras.TabIndex = 1;
             this.btn_compras.Text = "Compras";
             this.btn_compras.UseVisualStyleBackColor = false;
+            this.btn_compras.Click += new System.EventHandler(this.btn_compras_Click);
             // 
             // btn_Inventario
             // 
