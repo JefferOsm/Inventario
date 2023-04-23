@@ -29,17 +29,16 @@ namespace Inventario_Farmacia
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.dgv_ventaProductos = new System.Windows.Forms.DataGridView();
             this.btn_descuento = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_descuento = new System.Windows.Forms.TextBox();
-            this.btn_metodoPago = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.gb_ag = new System.Windows.Forms.GroupBox();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -48,10 +47,9 @@ namespace Inventario_Farmacia
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txt_fechaCompra = new System.Windows.Forms.DateTimePicker();
-            this.txt_metodoPago = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.db_medi = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,9 +70,10 @@ namespace Inventario_Farmacia
             this.txt_Nventa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_subTotal = new System.Windows.Forms.TextBox();
+            this.txt_tipoPago = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventaProductos)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_ag.SuspendLayout();
+            this.db_medi.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_nuevo
@@ -83,25 +82,13 @@ namespace Inventario_Farmacia
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nuevo.ForeColor = System.Drawing.Color.White;
-            this.btn_nuevo.Location = new System.Drawing.Point(1255, 378);
+            this.btn_nuevo.Location = new System.Drawing.Point(1255, 443);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(192, 51);
             this.btn_nuevo.TabIndex = 137;
             this.btn_nuevo.Text = "Nueva Venta";
             this.btn_nuevo.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(1255, 441);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(192, 51);
-            this.btn_cancelar.TabIndex = 136;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // btn_guardar
             // 
@@ -115,6 +102,7 @@ namespace Inventario_Farmacia
             this.btn_guardar.TabIndex = 135;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_salir
             // 
@@ -132,13 +120,36 @@ namespace Inventario_Farmacia
             // 
             // dgv_ventaProductos
             // 
+            this.dgv_ventaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_ventaProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_ventaProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ventaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ventaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ventaProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ventaProductos.Location = new System.Drawing.Point(40, 474);
             this.dgv_ventaProductos.Name = "dgv_ventaProductos";
+            this.dgv_ventaProductos.ReadOnly = true;
+            this.dgv_ventaProductos.RowHeadersVisible = false;
             this.dgv_ventaProductos.RowHeadersWidth = 51;
             this.dgv_ventaProductos.RowTemplate.Height = 24;
+            this.dgv_ventaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ventaProductos.Size = new System.Drawing.Size(1146, 290);
             this.dgv_ventaProductos.TabIndex = 133;
+            this.dgv_ventaProductos.Click += new System.EventHandler(this.dgv_ventaProductos_Click);
             // 
             // btn_descuento
             // 
@@ -170,50 +181,24 @@ namespace Inventario_Farmacia
             this.txt_descuento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descuento.Location = new System.Drawing.Point(798, 812);
             this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.ReadOnly = true;
             this.txt_descuento.Size = new System.Drawing.Size(170, 36);
             this.txt_descuento.TabIndex = 130;
+            this.txt_descuento.Text = "0";
             // 
-            // btn_metodoPago
+            // gb_ag
             // 
-            this.btn_metodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(99)))));
-            this.btn_metodoPago.FlatAppearance.BorderSize = 0;
-            this.btn_metodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_metodoPago.ForeColor = System.Drawing.Color.White;
-            this.btn_metodoPago.Location = new System.Drawing.Point(1380, 735);
-            this.btn_metodoPago.Name = "btn_metodoPago";
-            this.btn_metodoPago.Size = new System.Drawing.Size(94, 29);
-            this.btn_metodoPago.TabIndex = 121;
-            this.btn_metodoPago.Text = "Search";
-            this.btn_metodoPago.UseVisualStyleBackColor = false;
-            this.btn_metodoPago.Click += new System.EventHandler(this.btn_metodoPago_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_limpiar);
-            this.groupBox3.Controls.Add(this.btn_eliminar);
-            this.groupBox3.Controls.Add(this.btn_agregar);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.txt_importe);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txt_cantidad);
-            this.groupBox3.Location = new System.Drawing.Point(40, 350);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1139, 104);
-            this.groupBox3.TabIndex = 120;
-            this.groupBox3.TabStop = false;
-            // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpiar.ForeColor = System.Drawing.Color.White;
-            this.btn_limpiar.Location = new System.Drawing.Point(984, 25);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(128, 54);
-            this.btn_limpiar.TabIndex = 89;
-            this.btn_limpiar.Text = "Limpiar";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.gb_ag.Controls.Add(this.btn_eliminar);
+            this.gb_ag.Controls.Add(this.btn_agregar);
+            this.gb_ag.Controls.Add(this.label12);
+            this.gb_ag.Controls.Add(this.txt_importe);
+            this.gb_ag.Controls.Add(this.label11);
+            this.gb_ag.Controls.Add(this.txt_cantidad);
+            this.gb_ag.Location = new System.Drawing.Point(40, 350);
+            this.gb_ag.Name = "gb_ag";
+            this.gb_ag.Size = new System.Drawing.Size(994, 104);
+            this.gb_ag.TabIndex = 120;
+            this.gb_ag.TabStop = false;
             // 
             // btn_eliminar
             // 
@@ -227,6 +212,7 @@ namespace Inventario_Farmacia
             this.btn_eliminar.TabIndex = 88;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_agregar
             // 
@@ -240,6 +226,7 @@ namespace Inventario_Farmacia
             this.btn_agregar.TabIndex = 86;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // label12
             // 
@@ -257,6 +244,7 @@ namespace Inventario_Farmacia
             this.txt_importe.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_importe.Location = new System.Drawing.Point(443, 37);
             this.txt_importe.Name = "txt_importe";
+            this.txt_importe.ReadOnly = true;
             this.txt_importe.Size = new System.Drawing.Size(186, 36);
             this.txt_importe.TabIndex = 84;
             // 
@@ -278,6 +266,9 @@ namespace Inventario_Farmacia
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(170, 36);
             this.txt_cantidad.TabIndex = 82;
+            this.txt_cantidad.Text = "0";
+            this.txt_cantidad.TextChanged += new System.EventHandler(this.txt_cantidad_TextChanged);
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // label16
             // 
@@ -298,14 +289,6 @@ namespace Inventario_Farmacia
             this.txt_fechaCompra.Name = "txt_fechaCompra";
             this.txt_fechaCompra.Size = new System.Drawing.Size(167, 32);
             this.txt_fechaCompra.TabIndex = 116;
-            // 
-            // txt_metodoPago
-            // 
-            this.txt_metodoPago.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_metodoPago.Location = new System.Drawing.Point(1204, 730);
-            this.txt_metodoPago.Name = "txt_metodoPago";
-            this.txt_metodoPago.Size = new System.Drawing.Size(170, 36);
-            this.txt_metodoPago.TabIndex = 128;
             // 
             // label6
             // 
@@ -329,29 +312,29 @@ namespace Inventario_Farmacia
             this.label15.TabIndex = 127;
             this.label15.Text = "Total";
             // 
-            // groupBox2
+            // db_medi
             // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txt_precio);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txt_stock);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txt_medicamento);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_concentracion);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_tipoMedicamento);
-            this.groupBox2.Controls.Add(this.btn_medicamento);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_IDmedicamento);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(40, 44);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(994, 274);
-            this.groupBox2.TabIndex = 117;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos del Medicamento";
+            this.db_medi.Controls.Add(this.label10);
+            this.db_medi.Controls.Add(this.txt_precio);
+            this.db_medi.Controls.Add(this.label8);
+            this.db_medi.Controls.Add(this.txt_stock);
+            this.db_medi.Controls.Add(this.label7);
+            this.db_medi.Controls.Add(this.txt_medicamento);
+            this.db_medi.Controls.Add(this.label5);
+            this.db_medi.Controls.Add(this.txt_concentracion);
+            this.db_medi.Controls.Add(this.label4);
+            this.db_medi.Controls.Add(this.txt_tipoMedicamento);
+            this.db_medi.Controls.Add(this.btn_medicamento);
+            this.db_medi.Controls.Add(this.label3);
+            this.db_medi.Controls.Add(this.txt_IDmedicamento);
+            this.db_medi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.db_medi.ForeColor = System.Drawing.Color.White;
+            this.db_medi.Location = new System.Drawing.Point(40, 44);
+            this.db_medi.Name = "db_medi";
+            this.db_medi.Size = new System.Drawing.Size(994, 274);
+            this.db_medi.TabIndex = 117;
+            this.db_medi.TabStop = false;
+            this.db_medi.Text = "Datos del Medicamento";
             // 
             // label10
             // 
@@ -369,8 +352,10 @@ namespace Inventario_Farmacia
             this.txt_precio.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_precio.Location = new System.Drawing.Point(733, 198);
             this.txt_precio.Name = "txt_precio";
+            this.txt_precio.ReadOnly = true;
             this.txt_precio.Size = new System.Drawing.Size(238, 36);
             this.txt_precio.TabIndex = 79;
+            this.txt_precio.Text = "0";
             // 
             // label8
             // 
@@ -388,6 +373,7 @@ namespace Inventario_Farmacia
             this.txt_stock.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stock.Location = new System.Drawing.Point(464, 198);
             this.txt_stock.Name = "txt_stock";
+            this.txt_stock.ReadOnly = true;
             this.txt_stock.Size = new System.Drawing.Size(238, 36);
             this.txt_stock.TabIndex = 77;
             // 
@@ -407,6 +393,7 @@ namespace Inventario_Farmacia
             this.txt_medicamento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_medicamento.Location = new System.Drawing.Point(33, 198);
             this.txt_medicamento.Name = "txt_medicamento";
+            this.txt_medicamento.ReadOnly = true;
             this.txt_medicamento.Size = new System.Drawing.Size(351, 36);
             this.txt_medicamento.TabIndex = 75;
             // 
@@ -426,6 +413,7 @@ namespace Inventario_Farmacia
             this.txt_concentracion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_concentracion.Location = new System.Drawing.Point(733, 73);
             this.txt_concentracion.Name = "txt_concentracion";
+            this.txt_concentracion.ReadOnly = true;
             this.txt_concentracion.Size = new System.Drawing.Size(238, 36);
             this.txt_concentracion.TabIndex = 73;
             // 
@@ -445,6 +433,7 @@ namespace Inventario_Farmacia
             this.txt_tipoMedicamento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tipoMedicamento.Location = new System.Drawing.Point(464, 73);
             this.txt_tipoMedicamento.Name = "txt_tipoMedicamento";
+            this.txt_tipoMedicamento.ReadOnly = true;
             this.txt_tipoMedicamento.Size = new System.Drawing.Size(238, 36);
             this.txt_tipoMedicamento.TabIndex = 71;
             // 
@@ -478,6 +467,7 @@ namespace Inventario_Farmacia
             this.txt_IDmedicamento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IDmedicamento.Location = new System.Drawing.Point(33, 73);
             this.txt_IDmedicamento.Name = "txt_IDmedicamento";
+            this.txt_IDmedicamento.ReadOnly = true;
             this.txt_IDmedicamento.Size = new System.Drawing.Size(238, 36);
             this.txt_IDmedicamento.TabIndex = 68;
             // 
@@ -486,8 +476,10 @@ namespace Inventario_Farmacia
             this.txt_totalPago.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_totalPago.Location = new System.Drawing.Point(1188, 815);
             this.txt_totalPago.Name = "txt_totalPago";
+            this.txt_totalPago.ReadOnly = true;
             this.txt_totalPago.Size = new System.Drawing.Size(186, 36);
             this.txt_totalPago.TabIndex = 126;
+            this.txt_totalPago.Text = "0";
             // 
             // label2
             // 
@@ -518,12 +510,14 @@ namespace Inventario_Farmacia
             this.txt_ISV.Name = "txt_ISV";
             this.txt_ISV.Size = new System.Drawing.Size(186, 36);
             this.txt_ISV.TabIndex = 124;
+            this.txt_ISV.Text = "0.15";
             // 
             // txt_Nventa
             // 
             this.txt_Nventa.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nventa.Location = new System.Drawing.Point(1123, 222);
             this.txt_Nventa.Name = "txt_Nventa";
+            this.txt_Nventa.ReadOnly = true;
             this.txt_Nventa.Size = new System.Drawing.Size(274, 36);
             this.txt_Nventa.TabIndex = 118;
             // 
@@ -543,8 +537,22 @@ namespace Inventario_Farmacia
             this.txt_subTotal.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_subTotal.Location = new System.Drawing.Point(162, 814);
             this.txt_subTotal.Name = "txt_subTotal";
+            this.txt_subTotal.ReadOnly = true;
             this.txt_subTotal.Size = new System.Drawing.Size(170, 36);
             this.txt_subTotal.TabIndex = 122;
+            this.txt_subTotal.Text = "0";
+            // 
+            // txt_tipoPago
+            // 
+            this.txt_tipoPago.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tipoPago.FormattingEnabled = true;
+            this.txt_tipoPago.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta"});
+            this.txt_tipoPago.Location = new System.Drawing.Point(1204, 729);
+            this.txt_tipoPago.Name = "txt_tipoPago";
+            this.txt_tipoPago.Size = new System.Drawing.Size(187, 35);
+            this.txt_tipoPago.TabIndex = 138;
             // 
             // Ventas
             // 
@@ -552,22 +560,20 @@ namespace Inventario_Farmacia
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1504, 895);
+            this.Controls.Add(this.txt_tipoPago);
             this.Controls.Add(this.btn_nuevo);
-            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.dgv_ventaProductos);
             this.Controls.Add(this.btn_descuento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_descuento);
-            this.Controls.Add(this.btn_metodoPago);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gb_ag);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txt_fechaCompra);
-            this.Controls.Add(this.txt_metodoPago);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.db_medi);
             this.Controls.Add(this.txt_totalPago);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
@@ -578,11 +584,13 @@ namespace Inventario_Farmacia
             this.Name = "Ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventas_FormClosing);
+            this.Load += new System.EventHandler(this.Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventaProductos)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gb_ag.ResumeLayout(false);
+            this.gb_ag.PerformLayout();
+            this.db_medi.ResumeLayout(false);
+            this.db_medi.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,16 +599,13 @@ namespace Inventario_Farmacia
         #endregion
 
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.DataGridView dgv_ventaProductos;
         private System.Windows.Forms.Button btn_descuento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_descuento;
-        private System.Windows.Forms.Button btn_metodoPago;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.GroupBox gb_ag;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Label label12;
@@ -609,10 +614,9 @@ namespace Inventario_Farmacia
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker txt_fechaCompra;
-        private System.Windows.Forms.TextBox txt_metodoPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox db_medi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Label label8;
@@ -633,5 +637,6 @@ namespace Inventario_Farmacia
         private System.Windows.Forms.TextBox txt_Nventa;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_subTotal;
+        private System.Windows.Forms.ComboBox txt_tipoPago;
     }
 }

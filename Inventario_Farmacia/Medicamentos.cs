@@ -94,5 +94,10 @@ namespace Inventario_Farmacia
                 e.Handled = true;
             }
         }
+
+        private void txt_precioVenta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

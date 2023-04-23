@@ -57,3 +57,4 @@ C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\I
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Fac_Proveedores.resources
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Detalle_Compras.resources
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Detalle_Ventas.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Descuentos.resources

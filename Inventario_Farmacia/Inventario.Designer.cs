@@ -77,6 +77,7 @@ namespace Inventario_Farmacia
             this.dgv_medicamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_medicamentos.Size = new System.Drawing.Size(1166, 578);
             this.dgv_medicamentos.TabIndex = 1;
+            this.dgv_medicamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_medicamentos_CellContentClick);
             this.dgv_medicamentos.Click += new System.EventHandler(this.dgv_medicamentos_Click);
             // 
             // btn_eliminar

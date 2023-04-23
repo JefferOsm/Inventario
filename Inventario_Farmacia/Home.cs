@@ -76,5 +76,11 @@ namespace Inventario_Farmacia
             Detalle_Ventas venta = new Detalle_Ventas();
             venta.ShowDialog();
         }
+
+        private void btn_descuentos_Click(object sender, EventArgs e)
+        {
+            Descuentos descuento = new Descuentos();
+            descuento.ShowDialog();
+        }
     }
 }

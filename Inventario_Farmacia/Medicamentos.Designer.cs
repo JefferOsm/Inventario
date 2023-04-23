@@ -138,6 +138,7 @@ namespace Inventario_Farmacia
             this.txt_precioVenta.Name = "txt_precioVenta";
             this.txt_precioVenta.Size = new System.Drawing.Size(314, 36);
             this.txt_precioVenta.TabIndex = 74;
+            this.txt_precioVenta.TextChanged += new System.EventHandler(this.txt_precioVenta_TextChanged);
             this.txt_precioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioVenta_KeyPress);
             // 
             // txt_fechaVencimiento

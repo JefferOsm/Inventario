@@ -29,9 +29,11 @@ namespace Inventario_Farmacia
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.dgv_medicamento = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_medicamento)).BeginInit();
+            this.dgv_medicamentos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_medicamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_agregar
@@ -48,28 +50,53 @@ namespace Inventario_Farmacia
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // dgv_medicamento
+            // dgv_medicamentos
             // 
-            this.dgv_medicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_medicamento.Location = new System.Drawing.Point(55, 31);
-            this.dgv_medicamento.Name = "dgv_medicamento";
-            this.dgv_medicamento.RowHeadersWidth = 51;
-            this.dgv_medicamento.RowTemplate.Height = 24;
-            this.dgv_medicamento.Size = new System.Drawing.Size(1039, 569);
-            this.dgv_medicamento.TabIndex = 118;
+            this.dgv_medicamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_medicamentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_medicamentos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.dgv_medicamentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_medicamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_medicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_medicamentos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_medicamentos.Location = new System.Drawing.Point(39, 45);
+            this.dgv_medicamentos.Name = "dgv_medicamentos";
+            this.dgv_medicamentos.ReadOnly = true;
+            this.dgv_medicamentos.RowHeadersVisible = false;
+            this.dgv_medicamentos.RowHeadersWidth = 51;
+            this.dgv_medicamentos.RowTemplate.Height = 24;
+            this.dgv_medicamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_medicamentos.Size = new System.Drawing.Size(1162, 534);
+            this.dgv_medicamentos.TabIndex = 120;
+            this.dgv_medicamentos.Click += new System.EventHandler(this.dgv_medicamentos_Click);
             // 
             // list_medicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(1149, 703);
+            this.ClientSize = new System.Drawing.Size(1243, 703);
+            this.Controls.Add(this.dgv_medicamentos);
             this.Controls.Add(this.btn_agregar);
-            this.Controls.Add(this.dgv_medicamento);
             this.Name = "list_medicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicamentos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_medicamento)).EndInit();
+            this.Load += new System.EventHandler(this.list_medicamentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_medicamentos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,6 +104,6 @@ namespace Inventario_Farmacia
         #endregion
 
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.DataGridView dgv_medicamento;
+        private System.Windows.Forms.DataGridView dgv_medicamentos;
     }
 }

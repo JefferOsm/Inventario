@@ -44,6 +44,7 @@ namespace Inventario_Farmacia
             this.tsm_venta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_devC = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_devV = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_descuentos = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menu_home.SuspendLayout();
             this.SuspendLayout();
@@ -124,7 +125,8 @@ namespace Inventario_Farmacia
             this.tsm_medicamentos,
             this.tsm_proveedores,
             this.tsm_laboratorios,
-            this.tsm_categorias});
+            this.tsm_categorias,
+            this.btn_descuentos});
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
             this.registroToolStripMenuItem1.Size = new System.Drawing.Size(115, 36);
             this.registroToolStripMenuItem1.Text = "Registro";
@@ -194,6 +196,13 @@ namespace Inventario_Farmacia
             this.tsm_devV.Size = new System.Drawing.Size(350, 36);
             this.tsm_devV.Text = "Devolucion de Venta";
             // 
+            // btn_descuentos
+            // 
+            this.btn_descuentos.Name = "btn_descuentos";
+            this.btn_descuentos.Size = new System.Drawing.Size(340, 36);
+            this.btn_descuentos.Text = "Descuentos";
+            this.btn_descuentos.Click += new System.EventHandler(this.btn_descuentos_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,5 +240,6 @@ namespace Inventario_Farmacia
         private System.Windows.Forms.ToolStripMenuItem tsm_venta;
         private System.Windows.Forms.ToolStripMenuItem tsm_devC;
         private System.Windows.Forms.ToolStripMenuItem tsm_devV;
+        private System.Windows.Forms.ToolStripMenuItem btn_descuentos;
     }
 }

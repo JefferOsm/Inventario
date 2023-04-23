@@ -43,5 +43,10 @@ namespace Inventario_Farmacia
         {
             idMedicamento = Convert.ToString(this.dgv_medicamentos.SelectedRows[0].Cells[0].Value);
         }
+
+        private void dgv_medicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

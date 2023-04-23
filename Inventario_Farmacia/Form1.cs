@@ -13,6 +13,7 @@ namespace Inventario_Farmacia
 {
     public partial class Login : Form
     {
+        BD db = new BD();
         public Login()
         {
             InitializeComponent();
@@ -29,6 +30,21 @@ namespace Inventario_Farmacia
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_ingresar_Click(object sender, EventArgs e)
+        {
+
+            //db.VerificarUsuario(txt_usuario.Text, txt_contra.Text);
+            //if (db.conecto)
+            //{
+               
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error");
+            //}
+           
         }
     }
 }
