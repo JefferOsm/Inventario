@@ -58,35 +58,71 @@ Create table Medicamento (
 	registro_sanitario varchar (50),
 	constraint medicamentoPK primary key (medicamentoID),
 	constraint tipo_medicamentoID foreign key (tipo_medicamentoID) references Tipo_medicamento (tipo_medicamentoID)
+	on delete cascade on update cascade
 );
 
-Create table Tipo_pago (
-	tipo_pagoID int not null,
-	efectivo boolean,
-	tarjeta boolean,
-	constraint tipo_pagoPK primary key (tipo_pagoID)
-);	
 
 Create table Descuento (
-	descuentoID int not null,
-	descurnto_tercera_edad float,
-	descurnto_general float,
+	descuentoID SERIAL not null,
+	descuento_tercera_edad float,
+	descuento_general float,
 	constraint descuentoPK primary key (descuentoID)
-);	
-
-Create table Factura (
-	facturaID int not null,
-	descuentoID int,
-	tipo_pagoID int,
-	proveedorID int,
-	ISV float,
-	subtotal decimal,
-	total decimal,
-	constraint facturaPK primary key (facturaID),
-	constraint descurntoFK foreign key (descuentoID) references  Descuento (descuentoID),
-	constraint tipo_pagoFK foreign key (tipo_pagoID) references  Tipo_pago (tipo_pagoID),
-	constraint proveedorFK foreign key (proveedorID) references  Proveedor (proveedorID)
 );
+
+CREATE TABLE Ventas(
+	numero_ventaID VARCHAR(15) not null,
+	descuentoID INT,
+	fecha DATE,
+	tipo_pago VARCHAR(20),
+	ISV FLOAT,
+	subtotal FLOAT,
+	descuento FLOAT,
+	total FLOAT,
+	CONSTRAINT PKventa PRIMARY KEY(numero_ventaID),
+	CONSTRAINT FKventa_descuento FOREIGN KEY(descuentoID) REFERENCES descuento(descuentoID)
+	on delete cascade on update cascade
+);
+
+CREATE TABLE Detalle_venta(
+	ventaID VARCHAR(15),
+	medicamentoID INT,
+	cantidad INT,
+	importe FLOAT,
+	CONSTRAINT FKdetalleV_venta FOREIGN KEY(ventaID) REFERENCES ventas(numero_ventaID)
+	on delete cascade on update cascade,
+	CONSTRAINT FKdetalleV_medicamento FOREIGN KEY(medicamentoID) REFERENCES Medicamento(medicamentoID)
+	on delete cascade on update cascade
+);
+
+CREATE TABLE Compras(
+	compraID VARCHAR(15) not null,
+	fecha DATE,
+	proveedorID INT,
+	tipo_pago VARCHAR(20),
+	ISV FLOAT,
+	subtotal FLOAT,
+	total FLOAT,
+	CONSTRAINT PKcompra PRIMARY KEY(compraID),
+	CONSTRAINT FKcompra_proveedor FOREIGN KEY(proveedorID) REFERENCES Proveedor(proveedorID)
+	on delete cascade on update cascade
+);
+CREATE TABLE Detalle_compra(
+	compraID VARCHAR(15),
+	medicamentoID INT,
+	cantidad INT,
+	importe FLOAT,
+	CONSTRAINT FKdetalleV_compra FOREIGN KEY(compraID) REFERENCES Compras(compraID)
+	on delete cascade on update cascade,
+	CONSTRAINT FKdetalleV_medicamento FOREIGN KEY(medicamentoID) REFERENCES Medicamento(medicamentoID)
+	on delete cascade on update cascade
+);
+
+
+select *from Compras
+select *from Detalle_compra
+
+select *from Ventas
+select *from Detalle_venta
 
 Create table Devolucion (
 	devolucionID int not null,
@@ -106,18 +142,7 @@ Create table Detalle_devolucion (
 	constraint cuidadFK foreign key (ciudadID) references Ciudad (ciudadID)	
 );
 
-Create table Detalle_factura (
-	facturaID int,
-	medicamentoID int,
-	cantidad int,
-	fecha_compra date,
-	fecha_venta date,
-	coste float,
-	importe float,
-	constraint facturaFK foreign key (facturaID) references Factura (facturaID),
-	constraint medicamentoFK foreign key (medicamentoID) references Medicameto (medicamentoID)
-);
-	
+
 	
 	
 	

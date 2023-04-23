@@ -1,8 +1,9 @@
 
 -- Ciudades
 Insert into Ciudad(nombre_ciudad) Values(
-	'Tegucigalpa'	
+	'Cortes'	
 );
+
 Insert into Ciudad(nombre_ciudad) Values(
 	'San Pedro Sula'	
 );
@@ -160,3 +161,67 @@ contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_s
     8.00,
     10.02,
     'EN01967');
+	  insert into Medicamento(tipo_medicamentoID,laboratorioID,nom_medicamento,
+contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_sanitario) values(
+	3,
+    1,
+    'Ibuprofeno',
+    '100 mg',
+    25,
+    '2016-05-20',
+    8.00,
+    10.02,
+    'EN019239');
+	  insert into Medicamento(tipo_medicamentoID,laboratorioID,nom_medicamento,
+contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_sanitario) values(
+	2,
+    2,
+    'Tylenol',
+    '15 mg',
+    200,
+    '2016-05-20',
+    8.80,
+    11.02,
+    'EN01967');
+	  insert into Medicamento(tipo_medicamentoID,laboratorioID,nom_medicamento,
+contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_sanitario) values(
+	2,
+    2,
+    'Penicilina',
+    '500 mg',
+    80,
+    '2014-05-20',
+    9.00,
+    12.02,
+    'EN01957');
+	
+	
+	--Descuentos
+	
+	INSERT INTO Descuento(descuento_tercera_edad, descuento_general) VALUES
+	(0.1,0.05),
+	(0.12,0.1),
+	(0.1,0.08),
+	(0.2,0.1),
+	(0.15,0.15);
+	
+	--Ventas
+	INSERT INTO 
+	Ventas(numero_ventaID,descuentoID,fecha,tipo_pago,ISV,subtotal,descuento,total)
+	values
+	('NV120',1,'2014-05-20','Efectivo',0.15,0,0,0);
+	
+	--detalle Ventas
+	INSERT INTO 
+	Detalle_venta(ventaID,medicamentoID,cantidad,importe)
+	values
+	('NV120',3,12,120.20),
+	('NV120',2,12,120.20);
+	
+	UPDATE Medicamento set cantidad_stock=20 WHERE medicamentoID=7;
+	UPDATE Ventas set ISV=0.14,subtotal=20,descuento=0.2,total=17.5
+	WHERE numero_ventaID='NV120';
+	
+
+	
+
