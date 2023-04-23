@@ -82,5 +82,17 @@ namespace Inventario_Farmacia
             Descuentos descuento = new Descuentos();
             descuento.ShowDialog();
         }
+
+        private void tsm_devV_Click(object sender, EventArgs e)
+        {
+            Devolucion_Venta dev = new Devolucion_Venta();
+            dev.ShowDialog();
+        }
+
+        private void btn_dev_Click(object sender, EventArgs e)
+        {
+            verDevoluciones devo = new verDevoluciones();
+                devo.ShowDialog();
+        }
     }
 }

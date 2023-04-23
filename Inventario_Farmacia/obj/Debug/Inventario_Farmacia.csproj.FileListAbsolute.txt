@@ -58,3 +58,10 @@ C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\I
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Detalle_Compras.resources
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Detalle_Ventas.resources
 C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Descuentos.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.updateMedicamento.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Devolucion_Venta.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.devVentas.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.devProductos.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Productos_Venta.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.Medicamentos_compra.resources
+C:\Users\jeffer\source\repos\Inventario_Farmacia\Inventario_Farmacia\obj\Debug\Inventario_Farmacia.verDevoluciones.resources

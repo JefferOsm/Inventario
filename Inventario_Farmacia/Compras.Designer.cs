@@ -483,7 +483,7 @@ namespace Inventario_Farmacia
             this.gb_prov.Controls.Add(this.label6);
             this.gb_prov.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_prov.ForeColor = System.Drawing.Color.White;
-            this.gb_prov.Location = new System.Drawing.Point(36, 26);
+            this.gb_prov.Location = new System.Drawing.Point(36, 27);
             this.gb_prov.Name = "gb_prov";
             this.gb_prov.Size = new System.Drawing.Size(944, 154);
             this.gb_prov.TabIndex = 102;

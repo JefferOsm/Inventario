@@ -39,12 +39,13 @@ namespace Inventario_Farmacia
             this.tsm_proveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_laboratorios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_categorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_descuentos = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_compra = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_venta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_devC = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_devV = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_descuentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_dev = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menu_home.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@ namespace Inventario_Farmacia
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.btn_dev);
             this.panel1.Controls.Add(this.btn_ventas);
             this.panel1.Controls.Add(this.btn_compras);
             this.panel1.Controls.Add(this.btn_Inventario);
@@ -159,6 +161,13 @@ namespace Inventario_Farmacia
             this.tsm_categorias.Text = "Tipo de Medicamento";
             this.tsm_categorias.Click += new System.EventHandler(this.tsm_categorias_Click);
             // 
+            // btn_descuentos
+            // 
+            this.btn_descuentos.Name = "btn_descuentos";
+            this.btn_descuentos.Size = new System.Drawing.Size(340, 36);
+            this.btn_descuentos.Text = "Descuentos";
+            this.btn_descuentos.Click += new System.EventHandler(this.btn_descuentos_Click);
+            // 
             // movimientoToolStripMenuItem
             // 
             this.movimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -195,13 +204,22 @@ namespace Inventario_Farmacia
             this.tsm_devV.Name = "tsm_devV";
             this.tsm_devV.Size = new System.Drawing.Size(350, 36);
             this.tsm_devV.Text = "Devolucion de Venta";
+            this.tsm_devV.Click += new System.EventHandler(this.tsm_devV_Click);
             // 
-            // btn_descuentos
+            // btn_dev
             // 
-            this.btn_descuentos.Name = "btn_descuentos";
-            this.btn_descuentos.Size = new System.Drawing.Size(340, 36);
-            this.btn_descuentos.Text = "Descuentos";
-            this.btn_descuentos.Click += new System.EventHandler(this.btn_descuentos_Click);
+            this.btn_dev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(111)))), ((int)(((byte)(108)))));
+            this.btn_dev.FlatAppearance.BorderSize = 0;
+            this.btn_dev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dev.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dev.ForeColor = System.Drawing.Color.White;
+            this.btn_dev.Location = new System.Drawing.Point(667, 25);
+            this.btn_dev.Name = "btn_dev";
+            this.btn_dev.Size = new System.Drawing.Size(187, 57);
+            this.btn_dev.TabIndex = 3;
+            this.btn_dev.Text = "Devoluciones";
+            this.btn_dev.UseVisualStyleBackColor = false;
+            this.btn_dev.Click += new System.EventHandler(this.btn_dev_Click);
             // 
             // Home
             // 
@@ -241,5 +259,6 @@ namespace Inventario_Farmacia
         private System.Windows.Forms.ToolStripMenuItem tsm_devC;
         private System.Windows.Forms.ToolStripMenuItem tsm_devV;
         private System.Windows.Forms.ToolStripMenuItem btn_descuentos;
+        private System.Windows.Forms.Button btn_dev;
     }
 }

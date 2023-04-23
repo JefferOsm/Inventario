@@ -32,7 +32,32 @@ namespace Inventario_Farmacia
 
         private void dgv_Compras_Click(object sender, EventArgs e)
         {
+            btn_eliminar.Visible = true;
             idCompra = Convert.ToString(this.dgv_Compras.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("Seguro que desea eliminar todas las referencias a esta compra","Mensaje", MessageBoxButtons.OKCancel);
+            if (resp == DialogResult.OK)
+            {
+                bd.AbrirConexion();
+                bd.deleteCompras(idCompra);
+                bd.CerrarConexion();
+                ConsultarCompras();
+            }
+        }
+
+        private void dgv_Compras_DoubleClick(object sender, EventArgs e)
+        {
+            Medicamentos_compra medicamento = new Medicamentos_compra();
+            medicamento.idCompra = this.idCompra;
+            medicamento.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,5 +46,17 @@ namespace Inventario_Farmacia.Properties {
                 this["Ncompra"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int NdevolucionV {
+            get {
+                return ((int)(this["NdevolucionV"]));
+            }
+            set {
+                this["NdevolucionV"] = value;
+            }
+        }
     }
 }

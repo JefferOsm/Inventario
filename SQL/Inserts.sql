@@ -205,18 +205,14 @@ contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_s
 	(0.2,0.1),
 	(0.15,0.15);
 	
-	--Ventas
-	INSERT INTO 
-	Ventas(numero_ventaID,descuentoID,fecha,tipo_pago,ISV,subtotal,descuento,total)
-	values
-	('NV120',1,'2014-05-20','Efectivo',0.15,0,0,0);
+
 	
-	--detalle Ventas
-	INSERT INTO 
-	Detalle_venta(ventaID,medicamentoID,cantidad,importe)
-	values
-	('NV120',3,12,120.20),
-	('NV120',2,12,120.20);
+
+	
+	
+	
+
+	
 
 	
 

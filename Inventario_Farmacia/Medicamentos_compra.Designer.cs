@@ -1,7 +1,7 @@
 ﻿
 namespace Inventario_Farmacia
 {
-    partial class Detalle_Compras
+    partial class Medicamentos_compra
     {
         /// <summary>
         /// Required designer variable.
@@ -32,33 +32,17 @@ namespace Inventario_Farmacia
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgv_productos = new System.Windows.Forms.DataGridView();
             this.btn_eliminar = new System.Windows.Forms.Button();
-            this.dgv_Compras = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Compras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_eliminar
+            // dgv_productos
             // 
-            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.ForeColor = System.Drawing.Color.White;
-            this.btn_eliminar.Location = new System.Drawing.Point(87, 649);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(213, 54);
-            this.btn_eliminar.TabIndex = 58;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Visible = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // dgv_Compras
-            // 
-            this.dgv_Compras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_Compras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_Compras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.dgv_Compras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_productos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_productos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,8 +50,8 @@ namespace Inventario_Farmacia
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Compras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgv_Compras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,10 +59,10 @@ namespace Inventario_Farmacia
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Compras.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv_Compras.Location = new System.Drawing.Point(87, 34);
-            this.dgv_Compras.Name = "dgv_Compras";
-            this.dgv_Compras.ReadOnly = true;
+            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_productos.Location = new System.Drawing.Point(78, 24);
+            this.dgv_productos.Name = "dgv_productos";
+            this.dgv_productos.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,52 +70,48 @@ namespace Inventario_Farmacia
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Compras.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgv_Compras.RowHeadersVisible = false;
-            this.dgv_Compras.RowHeadersWidth = 51;
-            this.dgv_Compras.RowTemplate.Height = 24;
-            this.dgv_Compras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Compras.Size = new System.Drawing.Size(900, 578);
-            this.dgv_Compras.TabIndex = 59;
-            this.dgv_Compras.Click += new System.EventHandler(this.dgv_Compras_Click);
-            this.dgv_Compras.DoubleClick += new System.EventHandler(this.dgv_Compras_DoubleClick);
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgv_productos.RowHeadersVisible = false;
+            this.dgv_productos.RowHeadersWidth = 51;
+            this.dgv_productos.RowTemplate.Height = 24;
+            this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_productos.Size = new System.Drawing.Size(993, 578);
+            this.dgv_productos.TabIndex = 64;
             // 
-            // button1
+            // btn_eliminar
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(774, 649);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 54);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.Color.White;
+            this.btn_eliminar.Location = new System.Drawing.Point(858, 641);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(213, 54);
+            this.btn_eliminar.TabIndex = 63;
+            this.btn_eliminar.Text = "Salir";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
-            // Detalle_Compras
+            // Medicamentos_compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(1081, 739);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgv_Compras);
+            this.ClientSize = new System.Drawing.Size(1148, 719);
+            this.Controls.Add(this.dgv_productos);
             this.Controls.Add(this.btn_eliminar);
-            this.Name = "Detalle_Compras";
+            this.Name = "Medicamentos_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Compras";
-            this.Load += new System.EventHandler(this.Detalle_Compras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Compras)).EndInit();
+            this.Text = "Medicamenos Comprados";
+            this.Load += new System.EventHandler(this.Medicamentos_compra_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgv_productos;
         private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.DataGridView dgv_Compras;
-        private System.Windows.Forms.Button button1;
     }
 }

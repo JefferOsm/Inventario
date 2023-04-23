@@ -27,43 +27,45 @@ Ciudad.nombre_ciudad "Ciudad", direccion "Direccion", email "Email", telefono "T
 
 -- Ver detalle tipos de medicamento
 create view verTipoMedicamento as
-select tipo_medicamentoID "ID", tipo_medicamento "Nombre" from Tipo_Medicamento
+select tipo_medicamentoID "ID", tipo_medicamento "Nombre" from Tipo_Medicamento;
 
 -- Ver detalle Medicamentos
 Create view verMedicamentos as
-select medicamentoID "ID",nom_medicamento "Nombre", Tipo_medicamento.tipo_medicamento "Tipo", Laboratorio.laboratorio "Laboratorio",
-contenido "Contenido",cantidad_stock "Cantidad",fecha_vencimiento "Fecha Vencimiento",precio_compra "Precio Compra",precio_venta "Precio Venta"
-from Medicamento inner join Tipo_medicamento on Medicamento.tipo_medicamentoID= Tipo_medicamento.tipo_medicamentoID
-inner join Laboratorio on Medicamento.laboratorioID= Laboratorio.laboratorioID order by MedicamentoID asc;
+select medicamentoID "ID",nom_medicamento "Nombre", Tipo_medicamento.tipo_medicamento "Tipo",
+Laboratorio.laboratorio "Laboratorio",contenido "Contenido",
+cantidad_stock "Cantidad",fecha_vencimiento "Fecha Vencimiento",
+precio_compra "Precio Compra",precio_venta "Precio Venta",
+registro_sanitario "Codigo Sanitario" from Medicamento inner join Tipo_medicamento on 
+Medicamento.tipo_medicamentoID= Tipo_medicamento.tipo_medicamentoID inner join Laboratorio on 
+Medicamento.laboratorioID= Laboratorio.laboratorioID order by MedicamentoID asc;
 
 --Descuentos
 Create view verDescuentos as
 select descuentoID "ID", descuento_tercera_edad "Tercera Edad",descuento_general "General"
 from Descuento;
 
---Compras
-create view productosCompra as
-select Compras.compraID "ID", Medicamento.medicamentoID as "ID Medicamento",Medicamento.nom_medicamento as Nombre,Medicamento.contenido as Concentracion,
-Tipo_medicamento.tipo_medicamento as Tipo, Medicamento.cantidad_stock as Stock, Detalle_compra.cantidad "Cantidad Comprada" ,
-Detalle_compra.importe as Total FROM Detalle_compra
-inner join Compras on
-Detalle_compra.compraID=Compras.compraID
-inner join Medicamento on
-Detalle_compra.medicamentoID=Medicamento.medicamentoID
-inner join Tipo_medicamento on 
-Medicamento.tipo_medicamentoID= Tipo_Medicamento.tipo_medicamentoID;
-
 
 --Ventas
-create view productosVenta as
-select Ventas.numero_ventaID "ID", Medicamento.medicamentoID as "ID Medicamento",Medicamento.nom_medicamento as Nombre,Medicamento.contenido as Concentracion,
-Tipo_medicamento.tipo_medicamento as Tipo, Medicamento.cantidad_stock as Stock, Detalle_venta.cantidad "Cantidad Vendida" ,
-Detalle_venta.importe as Total FROM Detalle_venta
-inner join Ventas on
-Detalle_venta.ventaID=Ventas.numero_ventaID
-inner join Medicamento on
-Detalle_venta.medicamentoID=Medicamento.medicamentoID
+create view verVentas as
+select numero_ventaID "ID",fecha "Fecha", tipo_pago "Pago",ISV "ISV",
+subtotal "SubTotal", descuento "Descuento", total "Total" from Ventas
+order by numero_ventaID asc;
+
+--Compras
+create view verCompras as
+select compraID "ID",fecha "Fecha",Proveedor.proveedor "Proveedor", tipo_pago "Pago",ISV "ISV",
+subtotal "SubTotal", total "Total" from Compras inner join Proveedor
+on Compras.proveedorID=Proveedor.proveedorID
+order by compraID asc;
+
+--Devoluciones
+create view verDevoluciones as
+select devolucionID "ID", ventaID "Venta", Medicamento.nom_medicamento "Medicamento",
+Tipo_medicamento.tipo_medicamento "Tipo", cantidad "Cantidad Devuelta",
+fecha "Fecha Devolucion", motivo_devolucion "Motivo", total "Total Devuelto"
+from Devolucion_venta inner join Medicamento
+on Devolucion_venta.medicamentoID= Medicamento.medicamentoID
 inner join Tipo_medicamento on 
-Medicamento.tipo_medicamentoID= Tipo_Medicamento.tipo_medicamentoID;
+Medicamento.tipo_medicamentoID= Tipo_medicamento.tipo_medicamentoID;
 
 

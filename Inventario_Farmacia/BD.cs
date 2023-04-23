@@ -246,6 +246,8 @@ namespace Inventario_Farmacia
             }
         }
 
+
+        //BACK MEDICAMENTOS
         public DataTable getMedicamentos()
         {
             string sql = "select * from verMedicamentos";
@@ -279,6 +281,21 @@ namespace Inventario_Farmacia
             {
                 MessageBox.Show("Eliminado Correctamente");
                 cursor.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public void UpdateMedicamento(string nombre, string cont, string stock, string fecha, string precioC, string precioV, string san ,string refe)
+        {
+            string sql = "UPDATE Medicamento SET nom_medicamento = '" + nombre + "',contenido='"+cont+"',cantidad_stock="+stock+",fecha_vencimiento='"+fecha+"', "+
+                          "precio_compra="+precioC+",precio_venta="+precioV+",registro_sanitario='"+san+"' WHERE medicamentoID = " + refe;
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            try
+            {
+                MessageBox.Show("Actualizado Correctamente");
+                cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -386,7 +403,7 @@ namespace Inventario_Farmacia
         public DataTable getProductosVenta(string idVenta)
         {
             string sql = "select Medicamento.medicamentoID as ID,Medicamento.nom_medicamento as Nombre,Medicamento.contenido as Concentracion,"+
-                          "Tipo_medicamento.tipo_medicamento as Tipo, Medicamento.cantidad_stock as Stock, Detalle_venta.cantidad as Cantidad ,"+
+                          "Tipo_medicamento.tipo_medicamento as Tipo, Medicamento.precio_venta as Precio , Medicamento.cantidad_stock as Stock, Detalle_venta.cantidad as Cantidad ," +
                           "Detalle_venta.importe as Total FROM Detalle_venta inner join Ventas on Detalle_venta.ventaID=Ventas.numero_ventaID "+
                           "inner join Medicamento on Detalle_venta.medicamentoID=Medicamento.medicamentoID inner join Tipo_medicamento on "+
                           "Medicamento.tipo_medicamentoID= Tipo_Medicamento.tipo_medicamentoID WHERE Detalle_venta.ventaID='"+idVenta+"'";
@@ -459,7 +476,7 @@ namespace Inventario_Farmacia
         public DataTable getProductosCompra(string idCompra)
         {
             string sql = "select Medicamento.medicamentoID as ID,Medicamento.nom_medicamento as Nombre,Medicamento.contenido as Concentracion," +
-                          "Tipo_medicamento.tipo_medicamento as Tipo, Medicamento.cantidad_stock as Stock, Detalle_compra.cantidad as Cantidad ," +
+                          "Tipo_medicamento.tipo_medicamento as Tipo,Medicamento.cantidad_stock as Stock, Detalle_compra.cantidad as Cantidad ," +
                           "Detalle_compra.importe as Total FROM Detalle_compra inner join Compras on Detalle_compra.compraID=Compras.compraID  " +
                           "inner join Medicamento on Detalle_compra.medicamentoID=Medicamento.medicamentoID inner join Tipo_medicamento on  " +
                           "Medicamento.tipo_medicamentoID= Tipo_Medicamento.tipo_medicamentoID WHERE Detalle_compra.compraID='" + idCompra + "'";
@@ -489,7 +506,7 @@ namespace Inventario_Farmacia
         //BACK PARA CRUD VENTAS Y COMPRAS
         public DataTable GetCompras()
         {
-            string sql = "SELECT *From productosCompra";
+            string sql = "SELECT *From verCompras";
             NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
             NpgsqlDataAdapter data = new NpgsqlDataAdapter(cursor);
             DataTable tabla = new DataTable();
@@ -498,15 +515,93 @@ namespace Inventario_Farmacia
         }
         public DataTable GetVentas()
         {
-            string sql = "SELECT *From productosVenta";
+            string sql = "SELECT *From verVentas";
             NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
             NpgsqlDataAdapter data = new NpgsqlDataAdapter(cursor);
             DataTable tabla = new DataTable();
             data.Fill(tabla);
             return tabla;
         }
+        public void deleteVentas(string refe)
+        {
+            string sql = "delete from Ventas where numero_ventaID='" + refe + "'";
+            NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
+            try
+            {
+                MessageBox.Show("Eliminado Correctamente");
+                cursor.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public void deleteCompras(string refe)
+        {
+            string sql = "delete from Compras where compraID='" + refe + "'";
+            NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
+            try
+            {
+                MessageBox.Show("Eliminado Correctamente");
+                cursor.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
+        //Back devolucion Venta
+        public void insertDevolucion(string id, string ventaID, string medicamentoID, string cantidad, string motivo, string fecha, string total)
+        {
+            string sql = "insert into Devolucion_venta(devolucionID,ventaID,medicamentoID,cantidad,motivo_devolucion,fecha,total)" +
+                          " values('" + id + "','" + ventaID + "'," + medicamentoID + "," + cantidad + ",'" + motivo + "','" + fecha + "'," + total + ")";
+            NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
+            try
+            {
+                cursor.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public void UpdateDevolucion(string cantidad, string impor, string idVenta, string idProducto)
+        {
+            string sql = "UPDATE Detalle_venta SET cantidad = " + cantidad + ", importe= " + impor + " WHERE ventaID = '" + idVenta + "' AND medicamentoID="+idProducto+";";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public void updateDevVenta(string subtotal,string total, string refe)
+        {
+            string sql = "UPDATE Ventas SET subtotal= " + subtotal + ",total=" + total + " WHERE numero_ventaID = '" + refe + "';";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
+        public DataTable GetDevoluciones()
+        {
+            string sql = "SELECT *From verDevoluciones";
+            NpgsqlCommand cursor = new NpgsqlCommand(sql, this.con);
+            NpgsqlDataAdapter data = new NpgsqlDataAdapter(cursor);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+            return tabla;
+        }
 
 
     }

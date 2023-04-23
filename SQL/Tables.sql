@@ -118,23 +118,26 @@ CREATE TABLE Detalle_compra(
 );
 
 
-Create table Devolucion (
-	devolucionID int not null,
-	devol_compra boolean,
-	devol_venta boolean,
-	constraint devolucionPK primary key (devolucionID)
+Create table Devolucion_venta (
+	devolucionID Varchar(15) not null,
+	ventaID Varchar(15),
+	medicamentoID INT,
+	cantidad int,
+	motivo_devolucion varchar(50),
+	fecha date,
+	total float,
+	constraint devolucionPK primary key (devolucionID),
+	CONSTRAINT FKdevolucion_venta FOREIGN KEY(ventaID) REFERENCES ventas(numero_ventaID)
+	on delete cascade on update cascade,
+	CONSTRAINT FKdetalleV_medicamento FOREIGN KEY(medicamentoID) REFERENCES Medicamento(medicamentoID)
+	on delete cascade on update cascade
 );
 
-Create table Detalle_devolucion (
-	devolucionID int, 
-	paisID int,
-	ciudadID int,
-	fecha_emision date,
-	motivo_devolucion varchar (200),
-	constraint devolucionFK foreign key (devolucionID) references Devolucion (devolucionID),
-	constraint paisFK foreign key (paisID) references Pais (paisID),
-	constraint cuidadFK foreign key (ciudadID) references Ciudad (ciudadID)	
-);
+
+
+
+
+
 
 
 	

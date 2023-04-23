@@ -144,6 +144,24 @@
     <Compile Include="Detalle_Ventas.Designer.cs">
       <DependentUpon>Detalle_Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Devolucion Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devolucion Venta.Designer.cs">
+      <DependentUpon>Devolucion Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="devProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="devProductos.Designer.cs">
+      <DependentUpon>devProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="devVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="devVentas.Designer.cs">
+      <DependentUpon>devVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fac_descuentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +216,12 @@
     <Compile Include="Medicamentos.Designer.cs">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Medicamentos_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicamentos_compra.Designer.cs">
+      <DependentUpon>Medicamentos_compra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Med_Lab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +240,12 @@
     <Compile Include="Paises.Designer.cs">
       <DependentUpon>Paises.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos_Venta.Designer.cs">
+      <DependentUpon>Productos_Venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.cs">
@@ -230,11 +260,23 @@
     <Compile Include="Tipos_medicamento.Designer.cs">
       <DependentUpon>Tipos_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="updateMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateMedicamento.Designer.cs">
+      <DependentUpon>updateMedicamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="verDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verDevoluciones.Designer.cs">
+      <DependentUpon>verDevoluciones.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Ciudades.resx">
       <DependentUpon>Ciudades.cs</DependentUpon>
@@ -250,6 +292,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Detalle_Ventas.resx">
       <DependentUpon>Detalle_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devolucion Venta.resx">
+      <DependentUpon>Devolucion Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devProductos.resx">
+      <DependentUpon>devProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devVentas.resx">
+      <DependentUpon>devVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fac_descuentos.resx">
       <DependentUpon>Fac_descuentos.cs</DependentUpon>
@@ -278,6 +329,9 @@
     <EmbeddedResource Include="Medicamentos.resx">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Medicamentos_compra.resx">
+      <DependentUpon>Medicamentos_compra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Med_Lab.resx">
       <DependentUpon>Med_Lab.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paises.resx">
       <DependentUpon>Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos_Venta.resx">
+      <DependentUpon>Productos_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -302,8 +359,14 @@
     <EmbeddedResource Include="Tipos_medicamento.resx">
       <DependentUpon>Tipos_medicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="updateMedicamento.resx">
+      <DependentUpon>updateMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verDevoluciones.resx">
+      <DependentUpon>verDevoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
