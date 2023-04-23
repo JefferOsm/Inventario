@@ -118,12 +118,6 @@ CREATE TABLE Detalle_compra(
 );
 
 
-select *from Compras
-select *from Detalle_compra
-
-select *from Ventas
-select *from Detalle_venta
-
 Create table Devolucion (
 	devolucionID int not null,
 	devol_compra boolean,

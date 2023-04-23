@@ -217,10 +217,7 @@ contenido,cantidad_stock,fecha_vencimiento,precio_compra,precio_venta,registro_s
 	values
 	('NV120',3,12,120.20),
 	('NV120',2,12,120.20);
-	
-	UPDATE Medicamento set cantidad_stock=20 WHERE medicamentoID=7;
-	UPDATE Ventas set ISV=0.14,subtotal=20,descuento=0.2,total=17.5
-	WHERE numero_ventaID='NV120';
+
 	
 
 	

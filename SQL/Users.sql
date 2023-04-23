@@ -12,9 +12,4 @@ GRANT USAGE ON SCHEMA public to administrador;
 GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO administrador;
 GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO administrador;
 
-SELECT auth_scram('administrador','admin',rolpassword) FROM pg_authid WHERE rolname = 'administrador';
-
-
-
-
 SELECT *FROM pg_authid
